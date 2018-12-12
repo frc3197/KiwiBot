@@ -24,6 +24,6 @@ public class GyroTurn extends Command {
   }
 
   private double getRotation() {
-    return (Robot.sensors.gyro.getAngle() - angle) * RobotMap.autoSpeedChangePerDegree;
+    return RobotMap.gyroCorrection(Robot.sensors.gyro, angle);
   }
 }
