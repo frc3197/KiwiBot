@@ -1,4 +1,4 @@
-package frc3197.demo;
+package frc.robot;
 
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
@@ -37,7 +37,7 @@ public class RobotMap {
      */
     public static final double deadband = 0.02;
 
-    public static final int buttonSquaredInputs = 0;
+    public static final int buttonSquaredInputs = 1;
 
     /**
      * Autonomous

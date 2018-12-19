@@ -1,7 +1,7 @@
-package frc3197.demo.commands.auto.commands;
+package frc.robot.commands.auto.commands;
 
 import edu.wpi.first.wpilibj.command.TimedCommand;
-import frc3197.demo.Robot;
+import frc.robot.Robot;
 
 public class TimeTurn extends TimedCommand {
   private double speed;

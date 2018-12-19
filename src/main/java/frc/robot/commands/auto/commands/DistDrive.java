@@ -1,8 +1,8 @@
-package frc3197.demo.commands.auto.commands;
+package frc.robot.commands.auto.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc3197.demo.Robot;
-import frc3197.demo.RobotMap;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class DistDrive extends Command {
   private double initLeftDist;

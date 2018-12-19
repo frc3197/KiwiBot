@@ -1,7 +1,7 @@
-package frc3197.demo.commands;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
-import frc3197.demo.RobotMap;
+import frc.robot.RobotMap;
 
 public class ToggleSquaredInputs extends InstantCommand {
   @Override

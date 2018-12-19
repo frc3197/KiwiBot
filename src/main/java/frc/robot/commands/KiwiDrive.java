@@ -1,7 +1,7 @@
-package frc3197.demo.commands;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
-import frc3197.demo.Robot;
+import frc.robot.Robot;
 
 public class KiwiDrive extends Drive {
   @Override

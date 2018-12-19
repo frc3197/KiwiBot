@@ -1,7 +1,7 @@
-package frc3197.demo.commands.auto.modes;
+package frc.robot.commands.auto.modes;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import frc3197.demo.commands.auto.commands.*;
+import frc.robot.commands.auto.commands.*;
 
 public class ForwardAndTurn extends CommandGroup {
 

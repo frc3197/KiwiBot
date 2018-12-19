@@ -1,9 +1,9 @@
-package frc3197.demo.subsystems;
+package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import frc3197.demo.RobotMap;
-import frc3197.demo.commands.TankDrive;
+import frc.robot.RobotMap;
+import frc.robot.commands.TankDrive;
 
 public class TankDriveTrain extends DriveTrain {
   Spark left = new Spark(RobotMap.leftSparkChannel);
