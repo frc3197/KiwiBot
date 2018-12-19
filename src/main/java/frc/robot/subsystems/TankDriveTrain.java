@@ -1,18 +1,16 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 
 public class TankDriveTrain extends DriveTrain {
-  Spark left = new Spark(RobotMap.leftSparkChannel);
-  Spark right = new Spark(RobotMap.rightSparkChannel);
-
-  DifferentialDrive drive = new DifferentialDrive(left, right);
+  TalonSRX left = new TalonSRX(RobotMap.leftSparkChannel);
+  TalonSRX right = new TalonSRX(RobotMap.rightSparkChannel);
 
   public TankDriveTrain() {
-    drive.setDeadband(RobotMap.deadband);
   }
 
   @Override
@@ -21,8 +19,14 @@ public class TankDriveTrain extends DriveTrain {
   }
 
   public void drive(double x, double y, double r) {
-    drive.arcadeDrive(y, r, RobotMap.squaredInputs);
+    if (Math.abs(y) < RobotMap.deadband) {
+      y = 0;
+    }
+    if (Math.abs(r) < RobotMap.deadband) {
+      r = 0;
+    }
+    left.set(ControlMode.PercentOutput, x + r);
+    right.set(ControlMode.PercentOutput, x - r);
   }
 
-  
 }
