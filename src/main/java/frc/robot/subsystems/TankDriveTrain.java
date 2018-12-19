@@ -25,8 +25,8 @@ public class TankDriveTrain extends DriveTrain {
     if (Math.abs(r) < RobotMap.deadband) {
       r = 0;
     }
-    left.set(ControlMode.PercentOutput, x + r);
-    right.set(ControlMode.PercentOutput, x - r);
+    left.set(ControlMode.PercentOutput, y + r);
+    right.set(ControlMode.PercentOutput, y - r);
   }
 
 }
