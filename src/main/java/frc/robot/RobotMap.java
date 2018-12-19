@@ -17,7 +17,7 @@ public class RobotMap {
     /**
      * Ports and other physical addresses
      */
-    public static final int leftSparkChannel = 11;
+    public static final int leftSparkChannel = 13;
     public static final int rightSparkChannel = 12;
 
     public static final boolean leftEncoderReverseDirection = false;
