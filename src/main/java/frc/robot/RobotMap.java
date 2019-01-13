@@ -12,7 +12,7 @@ public class RobotMap {
         TANK, KIWI;
     };
 
-    public static final RobotType currentType = RobotType.TANK;
+    public static final RobotType currentType = RobotType.KIWI;
 
     /**
      * Ports and other physical addresses
