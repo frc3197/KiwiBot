@@ -1,6 +1,6 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -8,7 +8,7 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.KiwiDriveTrain;
 import frc.robot.subsystems.TankDriveTrain;
 
-public class Robot extends IterativeRobot {
+public class Robot extends TimedRobot {
   public static OI oi;
   public static Sensors sensors;
 
