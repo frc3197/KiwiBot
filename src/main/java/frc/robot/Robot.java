@@ -1,31 +1,18 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.KiwiDriveTrain;
-import frc.robot.subsystems.TankDriveTrain;
 
 public class Robot extends TimedRobot {
   public static OI oi;
-  public static Sensors sensors;
 
-  public static DriveTrain driveTrain;
-
-  Command m_autonomousCommand;
-  SendableChooser<Command> m_chooser = new SendableChooser<>();
+  public static KiwiDriveTrain driveTrain;
 
   @Override
   public void robotInit() {
     oi = new OI();
-    sensors = new Sensors();
-    if (RobotMap.currentType == RobotMap.RobotType.TANK) {
-      driveTrain = new TankDriveTrain();
-    } else {
-      driveTrain = new KiwiDriveTrain();
-    }
+    driveTrain = new KiwiDriveTrain();
   }
 
   @Override
@@ -44,11 +31,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_chooser.getSelected();
 
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.start();
-    }
   }
 
   @Override
@@ -58,9 +41,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    }
+
   }
 
   @Override
