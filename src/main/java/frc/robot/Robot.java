@@ -5,19 +5,19 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.KiwiDriveTrain;
 
 public class Robot extends TimedRobot {
-  public static OI oi;
+  public static OI oi = new OI();
 
   public static KiwiDriveTrain driveTrain;
+  // = new KiwiDriveTrain();
 
   @Override
   public void robotInit() {
-    oi = new OI();
-    driveTrain = new KiwiDriveTrain();
   }
 
   @Override
   public void robotPeriodic() {
     Scheduler.getInstance().run();
+    System.out.println(oi.gyro.getAngle());
   }
 
   @Override
