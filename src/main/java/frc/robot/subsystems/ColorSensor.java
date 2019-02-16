@@ -55,8 +55,4 @@ public class ColorSensor {
     public int proximity() {
         return readWordRegister(PDATA_REGISTER);
     }
-
-    public boolean ping() {
-        return sensor.addressOnly();
-    }
 }
