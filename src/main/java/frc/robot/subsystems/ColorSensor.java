@@ -9,6 +9,8 @@ import frc.robot.Robot;
 public class ColorSensor {
     I2C sensor;
 
+    int deadband = 200;
+
     protected final static int COMMAND_REGISTER_BIT = 0x80;
     protected final static int MULTI_BYTE_BIT = 0x20;
 
@@ -54,5 +56,16 @@ public class ColorSensor {
 
     public int proximity() {
         return readWordRegister(PDATA_REGISTER);
+    }
+
+    public boolean isWhite() {
+        if (Math.abs(red() - blue()) == 0 && Math.abs(green() - red()) == 0 && Math.abs(red() - blue()) == 0) {
+            return false;
+        } else if (Math.abs(red() - blue()) <= deadband && Math.abs(green() - red()) <= deadband
+                && Math.abs(red() - blue()) <= deadband) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

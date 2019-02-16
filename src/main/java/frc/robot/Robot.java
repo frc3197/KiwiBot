@@ -2,6 +2,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.ColorSensor;
 import frc.robot.subsystems.KiwiDriveTrain;
 
@@ -50,10 +51,11 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    System.out.println("Blue " + Robot.colorSensor.blue());
-    System.out.println("Red " + Robot.colorSensor.red());
-    System.out.println("Green " + Robot.colorSensor.green());
-    System.out.println("Proximity " + Robot.colorSensor.proximity());
+    SmartDashboard.putNumber("Blue ", Robot.colorSensor.blue());
+    SmartDashboard.putNumber("Red ", Robot.colorSensor.red());
+    SmartDashboard.putNumber("Green ", Robot.colorSensor.green());
+    SmartDashboard.putNumber("Proximity ", Robot.colorSensor.proximity());
+    SmartDashboard.putBoolean("isWhite", Robot.colorSensor.isWhite());
   }
 
   @Override
